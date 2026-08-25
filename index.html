@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Dipanshu Sehrawat — CSE student portfolio." />
+<title>Dipanshu Sehrawat — CSE Student</title>
+<style>
+:root{
+  --bg:#08090c; --panel:#101217; --panel2:#151820; --text:#f5f7fb; --muted:#9299a8;
+  --line:rgba(255,255,255,.09); --accent:#b8ff5a; --accent2:#77a8ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 80% 0%,rgba(184,255,90,.08),transparent 30%),
+radial-gradient(circle at 10% 30%,rgba(119,168,255,.07),transparent 28%),var(--bg);color:var(--text);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,92%);margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(8,9,12,.72);backdrop-filter:blur(18px);z-index:20}
+.logo{font-weight:800;letter-spacing:-.04em}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:28px;color:var(--muted);font-size:14px}.navlinks a:hover{color:#fff}
+.hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:center;padding:80px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025);color:#cdd3df;font-size:12px;margin-bottom:24px}
+.dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px var(--accent)}
+h1{font-size:clamp(58px,8vw,104px);line-height:.88;letter-spacing:-.075em;max-width:850px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:18px;color:var(--muted);max-width:650px;margin:28px 0}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:12px 18px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:14px}.primary{background:var(--accent);color:#0b0d09;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
+.profile{background:linear-gradient(145deg,#171a20,#0d0f13);border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(2deg)}
+.avatar{aspect-ratio:1;background:linear-gradient(135deg,#27311e,#151a13);border-radius:20px;display:grid;place-items:center;font-size:82px;font-weight:900;color:var(--accent);letter-spacing:-.1em}
+.cardmeta{display:flex;justify-content:space-between;margin-top:18px;color:var(--muted);font-size:12px}.cardmeta strong{color:#fff;font-size:14px}
+section{padding:110px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+.kicker{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800}.sectionhead h2{font-size:46px;letter-spacing:-.055em;line-height:1;margin-top:8px}.sectionhead p{max-width:410px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.project{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.project:hover{transform:translateY(-5px);border-color:rgba(184,255,90,.35)}
+.project .num{font-size:12px;color:var(--muted)}.project h3{font-size:25px;letter-spacing:-.035em;margin:45px 0 10px}.project p{color:var(--muted);font-size:14px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font-size:11px;padding:6px 9px;background:var(--panel2);border:1px solid var(--line);border-radius:999px;color:#cbd1dc}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{padding:24px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:18px}.stat b{font-size:35px;letter-spacing:-.05em}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:14px}.skillbox{padding:25px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}.skillbox h3{margin-bottom:20px}.skillrow{margin:14px 0}.skilltop{display:flex;justify-content:space-between;font-size:13px;margin-bottom:7px}.bar{height:6px;border-radius:10px;background:#20242c;overflow:hidden}.fill{height:100%;width:var(--w);background:linear-gradient(90deg,var(--accent),#d8ff9b);border-radius:10px}
+.timeline{display:grid;grid-template-columns:180px 1fr;gap:25px;padding:25px 0;border-bottom:1px solid var(--line)}.timeline:last-child{border-bottom:0}.timeline .date{color:var(--muted);font-size:13px}.timeline h3{font-size:22px}.timeline p{color:var(--muted);margin-top:7px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.contact h2{font-size:64px;line-height:.9;letter-spacing:-.07em}.contact p{color:var(--muted);margin-top:20px}.contactcard{border:1px solid var(--line);border-radius:24px;padding:28px;background:linear-gradient(145deg,#12151a,#0c0e11)}.contactline{padding:15px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.contactline:last-child{border-bottom:0}.contactline span{color:var(--muted)}
+footer{padding:30px 0;color:#666d7a;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:55px 0}.profile{max-width:420px}.grid,.stats{grid-template-columns:1fr 1fr}.skills,.contact{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.sectionhead{display:block}.sectionhead p{margin-top:18px}h1{font-size:64px}}
+@media(max-width:520px){.grid,.stats{grid-template-columns:1fr}.contact h2{font-size:50px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a class="logo" href="#">DS<span>.</span></a>
+    <div class="navlinks"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a></div>
+  </div>
+</nav>
+
+<main class="container">
+<section class="hero">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> First-year CSE student · building in public</div>
+    <h1>Dipanshu<br><em>Sehrawat.</em></h1>
+    <p>Computer Science student at Amity University Noida, obsessed with turning messy problems into clean products. Currently exploring software engineering, systems, AI and competitive programming.</p>
+    <div class="actions">
+      <a class="btn primary" href="#work">Explore my work ↓</a>
+      <a class="btn" href="mailto:dipanshu@example.com">Let's connect ↗</a>
+    </div>
+  </div>
+  <div class="profile">
+    <div class="avatar">DS</div>
+    <div class="cardmeta"><div><strong>01 / 01</strong><br>Computer Science</div><div style="text-align:right"><strong>NOIDA, IN</strong><br>2026 — 2030</div></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="sectionhead"><div><div class="kicker">Selected work</div><h2>Projects with a point of view.</h2></div><p>Sample portfolio projects below are intentionally positioned like strong engineering case studies. Replace the demo metrics with your real results before publishing.</p></div>
+  <div class="grid">
+    <article class="project"><div class="num">01 / PRODUCT + FULL STACK</div><div><h3>PulseBoard</h3><p>Real-time campus operations dashboard that turns scattered notices, events and deadlines into one searchable workspace.</p><div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div></div></article>
+    <article class="project"><div class="num">02 / AI + NLP</div><div><h3>QueryLens</h3><p>Natural-language interface for exploring structured datasets, generating SQL and explaining query results in plain English.</p><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLMs</span></div></div></article>
+    <article class="project"><div class="num">03 / SYSTEMS</div><div><h3>CacheCraft</h3><p>Educational in-memory cache engine built from scratch to understand eviction strategies, latency and concurrent access.</p><div class="tags"><span class="tag">C++</span><span class="tag">DSA</span><span class="tag">Benchmarks</span></div></div></article>
+  </div>
+</section>
+
+<section>
+  <div class="sectionhead"><div><div class="kicker">Impact snapshot</div><h2>Numbers that tell the story.</h2></div><p>Demo figures for the visual concept — update these with verified achievements, GitHub analytics or measured project results.</p></div>
+  <div class="stats">
+    <div class="stat"><b>24</b><span>Projects / experiments shipped</span></div>
+    <div class="stat"><b>180+</b><span>DSA problems solved</span></div>
+    <div class="stat"><b>97%</b><span>Demo API test coverage</span></div>
+    <div class="stat"><b>2.1×</b><span>Performance improvement</span></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sectionhead"><div><div class="kicker">Technical toolkit</div><h2>Learning fast. Building faster.</h2></div><p>Designed to communicate depth without pretending you already know everything.</p></div>
+  <div class="skills">
+    <div class="skillbox"><h3>Engineering</h3>
+      <div class="skillrow"><div class="skilltop"><span>C / C++</span><span>75%</span></div><div class="bar"><div class="fill" style="--w:75%"></div></div></div>
+      <div class="skillrow"><div class="skilltop"><span>Python</span><span>72%</span></div><div class="bar"><div class="fill" style="--w:72%"></div></div></div>
+      <div class="skillrow"><div class="skilltop"><span>JavaScript / TypeScript</span><span>64%</span></div><div class="bar"><div class="fill" style="--w:64%"></div></div></div>
+      <div class="skillrow"><div class="skilltop"><span>DSA / Problem Solving</span><span>68%</span></div><div class="bar"><div class="fill" style="--w:68%"></div></div></div>
+    </div>
+    <div class="skillbox"><h3>Tools & concepts</h3>
+      <div class="tags" style="margin-top:0"><span class="tag">Git / GitHub</span><span class="tag">Linux</span><span class="tag">REST APIs</span><span class="tag">SQL</span><span class="tag">React</span><span class="tag">Docker</span><span class="tag">OOP</span><span class="tag">DBMS</span><span class="tag">Computer Networks</span><span class="tag">System Design</span><span class="tag">AI / ML</span><span class="tag">Figma</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="sectionhead"><div><div class="kicker">Journey</div><h2>Early stage. Serious trajectory.</h2></div><p>A simple timeline that makes a first-year profile feel intentional rather than empty.</p></div>
+  <div class="timeline"><div class="date">2026 — PRESENT</div><div><h3>B.Tech Computer Science & Engineering</h3><p>Amity University Noida · Building foundations in programming, mathematics, DSA and software engineering.</p></div></div>
+  <div class="timeline"><div class="date">2026</div><div><h3>Independent Engineering Sprint</h3><p>Built a collection of small systems, web apps and automation experiments to learn by shipping.</p></div></div>
+  <div class="timeline"><div class="date">NEXT MILESTONE</div><div><h3>Hackathons · Open Source · Internship</h3><p>Targeting meaningful contributions, measurable projects and real-world engineering experience.</p></div></div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div><div class="kicker">Get in touch</div><h2>Let's build<br>something useful.</h2><p>Open to hackathons, open-source collaborations, student developer communities and future internship opportunities.</p></div>
+    <div class="contactcard">
+      <div class="contactline"><span>Email</span><strong>dipanshu@example.com</strong></div>
+      <div class="contactline"><span>GitHub</span><strong>github.com/dipanshu-sehrawat</strong></div>
+      <div class="contactline"><span>LinkedIn</span><strong>linkedin.com/in/dipanshu-sehrawat</strong></div>
+      <div class="contactline"><span>Location</span><strong>Noida, India</strong></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="container"><span>© 2026 Dipanshu Sehrawat</span><span>Designed & engineered with intent.</span></footer>
+</body>
+</html>
